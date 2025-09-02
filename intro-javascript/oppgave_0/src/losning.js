@@ -59,3 +59,46 @@ createButton.addEventListener('click', () => {
     placeholder.append(newElement);
 });
 
+// Oppgave 6
+// Selecting button and list by their IDs
+const removeLastButton = document.getElementById('remove-li');
+const list = document.getElementById('list');
+
+// Adding event listener to button to remove the last item from the list on click
+removeLastButton.addEventListener('click', () => {
+    if (list.lastChild) {
+        list.removeChild(list.lastChild);
+    }
+});
+
+// Oppgave 7
+// Selecting input field and button by their IDs
+const nameInput = document.getElementById('name');
+const orderButton = document.getElementById('order');
+
+// Adding event listener to input field to change button border color based on input length
+nameInput.addEventListener('input', () => {
+    if (nameInput.value.length > 4) {
+        orderButton.style.border = '1px solid red';
+    } else {
+        orderButton.style.border = '1px solid black';
+    }
+});
+
+// Oppgave 8
+// Selecting all unordered lists with class 'children' and the button by its ID
+const ulChildren = document.getElementsByClassName('children');
+const colorButton = document.getElementById('color');
+
+// Adding event listener to button to change border color of list items based on their index (odd/even)
+colorButton.addEventListener('click', () => {
+    for (const ul of ulChildren) {
+        const items = ul.children;
+        for (let i = 0; i < items.length; i++) {
+            const li = items[i];
+            const odd = i % 2 === 0;
+            li.style.border = odd ? '1px solid green' : '1px solid pink';
+        }
+    }
+});
+
