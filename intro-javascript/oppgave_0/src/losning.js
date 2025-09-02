@@ -97,7 +97,7 @@ colorButton.addEventListener('click', () => {
         for (let i = 0; i < items.length; i++) {
             const li = items[i];
             const odd = i % 2 === 0;
-            li.style.border = odd ? '1px solid green' : '1px solid pink';
+            li.style.border = odd ? '2px solid green' : '2px solid pink';
         }
     }
 });
